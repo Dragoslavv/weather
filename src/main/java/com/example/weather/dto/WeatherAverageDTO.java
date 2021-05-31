@@ -49,21 +49,6 @@ public class WeatherAverageDTO implements Serializable {
         this.quantPressure = 0;
     }
 
-    public WeatherAverageDTO(LocalDate date, BigDecimal daily, BigDecimal nightly, BigDecimal pressure,
-                             BigDecimal totalDaily, Integer quantDaily, BigDecimal totalNightly, Integer quantNightly,
-                             BigDecimal totalPressure, Integer quantPressure){
-        this.date = date;
-        this.daily = daily;
-        this.nightly = nightly;
-        this.pressure = pressure;
-        this.totalDaily = totalDaily;
-        this.quantDaily = quantDaily;
-        this.totalNightly = totalNightly;
-        this.quantNightly = quantNightly;
-        this.totalPressure = totalPressure;
-        this.quantPressure = quantPressure;
-    }
-
     public void plusMap(WeatherMapTimeDTO map) {
         if (map.isDaily()) {
             this.totalDaily = this.totalDaily.add(map.getMain().getTemp());
